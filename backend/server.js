@@ -31,6 +31,10 @@ const transporter = nodemailer.createTransport({
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/shipments", shipmentRoutes);
 
+// ✅ ADD THIS TEST ROUTE 👇
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Backend is working 🚀" });
+});
 app.get("/", (req, res) => {
   res.send("API Running...");
 });
