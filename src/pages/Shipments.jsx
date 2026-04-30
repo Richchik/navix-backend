@@ -28,7 +28,7 @@ export default function Shipments() {
 
   const fetchShipments = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/shipments");
+      const res = await axios.get("https://navix-backend.onrender.com/api/shipments");
 
       const formatted = res.data.map((s) => ({
         _id: s._id,
@@ -49,7 +49,7 @@ export default function Shipments() {
 
   const getAIPrediction = async (shipment) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/ai/predict-delay", {
+      const res = await axios.post("https://navix-backend.onrender.com/api/ai/predict-delay", {
         id: shipment._id,
         origin: shipment.origin,
         destination: shipment.destination,
@@ -91,7 +91,7 @@ export default function Shipments() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/shipments",
+        "https://navix-backend.onrender.com/api/shipments",
         formData
       );
 
@@ -111,7 +111,7 @@ export default function Shipments() {
 
   const deleteShipment = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/shipments/${id}`);
+      await axios.delete(`https://navix-backend.onrender.com/api/shipments/${id}`);
       setSelectedShipmentId(null);
       fetchShipments();
     } catch (err) {

@@ -48,7 +48,7 @@ export default function Warehouse() {
 
   // ✅ FETCH DATA
   const fetchData = async () => {
-    const res = await fetch("http://localhost:5000/api/warehouse-status");
+    const res = await fetch("https://navix-backend.onrender.com/api/warehouse-status");
     const data = await res.json();
     setWarehouses(data);
   };
@@ -68,7 +68,7 @@ export default function Warehouse() {
       return;
     }
 
-    await fetch("http://localhost:5000/api/warehouses", {
+    await fetch("https://navix-backend.onrender.com/api/warehouses", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -85,7 +85,7 @@ export default function Warehouse() {
 
   // ✅ UPDATE
   const handleUpdateWarehouse = async (id) => {
-    await fetch(`http://localhost:5000/api/warehouses/${id}`, {
+    await fetch(`https://navix-backend.onrender.com/api/warehouses/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

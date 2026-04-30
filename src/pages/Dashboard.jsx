@@ -18,7 +18,7 @@ export default function Dashboard() {
     });
 
     axios
-      .get("http://localhost:5000/api/dashboard")
+      .get("https://navix-backend.onrender.com/api/dashboard")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
 
