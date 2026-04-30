@@ -4,7 +4,7 @@ export default function Alerts() {
   const [alerts, setAlerts] = useState([]);
 
   useEffect(() => {
-    fetch("https://navix-backend.onrender.com/api/warehouse-status")
+    fetch("https://navix-backend-e5vm.onrender.com/api/warehouse-status")
       .then(res => res.json())
       .then(data => {
         const alertList = data
@@ -25,7 +25,7 @@ export default function Alerts() {
 
   const sendSOS = async (alert) => {
     try {
-      await fetch("https://navix-backend.onrender.com/api/sos", {
+      await fetch("https://navix-backend-e5vm.onrender.com/api/sos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
